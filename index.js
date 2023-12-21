@@ -9,7 +9,6 @@ const express = require("express");
 const router = express();
 router.use(express.json());
 
-router.use("/user",user_controller);
 
 // server listening 
 server.listen(port, () => {

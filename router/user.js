@@ -1,9 +1,17 @@
-// var express = require("express");
+var express = require("express");
 
-// var router = express.Router();
+var app = express.Router();
 
-// const User = require("../controller/user");
+var usercontroller = require('../controller/user')
+
+const auth = require("../middleware/auth");
 
 
 
-// router.post("/user_register",User.)
+app.post("/user_register", usercontroller.register)
+
+app.post("/login", usercontroller.login)
+
+app.post("/user_req_book", auth, usercontroller.user_req_book)
+
+module.exports = app;
